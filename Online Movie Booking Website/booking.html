@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Movie Ticket Booking - Booking Page</title>
+</head>
+<body>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+.booking-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+}
+
+.seat-selection,
+.summary {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+    </style>
+
+  <header>
+    <h1>Booking Page</h1>
+  </header>
+
+  <main>
+    <div class="booking-form">
+      <label for="ticketQuantity">Number of Tickets:</label>
+      <input type="number" id="ticketQuantity" min="1" value="1" oninput="updateSummary()">
+
+      <div class="seat-selection">
+        <!-- Placeholder for seat selection -->
+        <p>Seat Selection: <span id="selectedSeats">No seats selected</span></p>
+      </div>
+
+      <div class="summary">
+        <h2>Booking Summary</h2>
+        <p>Total Tickets: <span id="totalTickets">1</span></p>
+        <p>Total Cost: $<span id="totalCost">100</span></p>
+        <button onclick="confirmBooking()">Confirm Booking</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Movie Ticket Booking</p>
+  </footer>
+
+  <script src="booking-script.js"></script>
+</body>
+<script>
+    function updateSummary() {
+  const ticketQuantity = parseInt(document.getElementById('ticketQuantity').value);
+  const selectedSeats = "A1, A2, A3"; // Placeholder for seat selection
+  const ticketPrice = 100; // Placeholder for ticket price
+
+  document.getElementById('selectedSeats').innerText = selectedSeats;
+  document.getElementById('totalTickets').innerText = ticketQuantity;
+  document.getElementById('totalCost').innerText = ticketQuantity * ticketPrice;
+}
+
+function confirmBooking() {
+  // Implement booking confirmation logic here
+  alert('Booking confirmed!');
+}
+
+</script>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Movie Detail</title>
+</head>
+<body>
+    <style>
+        /* Add or modify styles as needed */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+.movie-details {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.movie-details img {
+    max-width: 200px;
+    margin-right: 20px;
+}
+
+.details {
+    max-width: 400px;
+}
+
+.date-time-selector {
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+    </style>
+
+  <header>
+    <h1>Movie Details</h1>
+  </header>
+
+  <main>
+    <div class="movie-details">
+      <img src="images/movie 1.jpg" alt="movie 1">
+      <div class="details">
+        <h2>Hi nanna</h2>
+        <p>Genre: Family</p>
+        <p>Director: Christopher Nolan</p>
+        <p>Release Date: July 16, 2010</p>
+      </div>
+    </div>
+
+    <div class="date-time-selector">
+      <label for="date">Select Date:</label>
+      <input type="date" id="date" name="date" min="2024-01-01" required>
+
+      <label for="time">Select Time:</label>
+      <input type="time" id="time" name="time" required>
+    </div>
+
+    <button onclick="proceedToBooking()">Proceed to Booking</button>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Movie Ticket Booking</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Add or modify JavaScript code as needed
+
+function proceedToBooking() {
+  const selectedDate = document.getElementById('date').value;
+  const selectedTime = document.getElementById('time').value;
+
+  if (selectedDate && selectedTime) {
+    // Redirect to the booking page with selected date and time
+    window.location.href = `booking.html?date=${selectedDate}&time=${selectedTime}`;
+  } else {
+    alert('Please select date and time before proceeding to booking.');
+  }
+}
+
+  </script>
+</body>
+</html>
